@@ -1538,12 +1538,14 @@ body.subpage .l-main .l-intro {
   margin-top: 3.6rem;
   text-align: center;
 }
-.l-form__submit input {
+
+.wpcf7-submit {
   -webkit-transition: all 0.5s ease;
   display: block;
   width: 100%;
-  padding: 1.9rem 0;
-  border: 1px solid #222222;
+  margin-top: 3.6rem;
+  padding: 1.9rem 0 !important;
+  border: 1px solid #222222 !important;
   background: #fff;
   color: #222222;
   font-weight: 400;
@@ -1551,12 +1553,13 @@ body.subpage .l-main .l-intro {
   line-height: 1;
   font-family: "Noto Sans JP";
   letter-spacing: 0em;
+  text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
 }
-.l-form__submit input__submit:hover input {
-  background: #fff;
-  color: #222222;
+.wpcf7-submit:hover {
+  background: #222222;
+  color: #fff;
 }
 
 /* home-mv
@@ -5004,9 +5007,9 @@ button.swiper-pagination-bullet {
   .l-form__submit {
     margin-top: 6.1rem;
   }
-  .l-form__submit input {
+  .wpcf7-submit {
     width: 25.6rem;
-    margin: 0 auto;
+    margin: 6.1rem auto 0;
   }
   .p-home-mv__blogText {
     -webkit-box-pack: justify;
