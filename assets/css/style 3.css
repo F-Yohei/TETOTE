@@ -1338,7 +1338,6 @@ body.subpage .l-main .l-intro {
   -webkit-transform: translateY(-47%) rotate(135deg);
   box-sizing: border-box;
   display: inline-block;
-  z-index: 2;
   position: absolute;
   top: 47%;
   top: 47%;
@@ -1404,7 +1403,7 @@ body.subpage .l-main .l-intro {
   background: #faf7f1;
   font-size: 1.2rem;
 }
-.l-form__dd.-radio .wpcf7-form-control-wrap .wpcf7-form-control {
+.l-form__dd.-radio {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   display: -webkit-box;
@@ -1414,36 +1413,15 @@ body.subpage .l-main .l-intro {
 .l-form__dd.-radio span:not(:first-of-type) {
   margin-top: 1.6rem;
 }
-.l-form__dd.-radio .wpcf7-list-item label {
-  -webkit-box-align: center;
-  display: -webkit-box;
-  display: flex;
-          align-items: center;
-}
-.l-form__dd.-radio-sec .wpcf7-form-control-wrap .wpcf7-form-control {
+.l-form__dd.-radio-sec {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   display: -webkit-box;
   display: flex;
           flex-direction: column;
 }
-.l-form__dd.-radio-sec .wpcf7-form-control-wrap .wpcf7-form-control span:not(:first-of-type) {
+.l-form__dd.-radio-sec span:not(:first-of-type) {
   margin-top: 2.1rem;
-}
-.l-form__dd.-radio-sec .wpcf7-form-control-wrap .wpcf7-form-control .wpcf7-list-item label {
-  -webkit-box-align: center;
-  display: -webkit-box;
-  display: flex;
-          align-items: center;
-}
-.l-form__dd.-radio-sec .wpcf7-form-control-wrap .wpcf7-form-control .wpcf7-list-item label input[type=radio] {
-  border-radius: 0%;
-}
-.l-form__dd.-radio-sec .wpcf7-form-control-wrap .wpcf7-form-control .wpcf7-list-item label input[type=radio]:before {
-  border-radius: 0%;
-}
-.l-form__dd.-radio-sec .wpcf7-form-control-wrap .wpcf7-form-control .wpcf7-list-item .wpcf7-list-item-label {
-  padding-left: 1rem;
 }
 .l-form__dd textarea {
   width: 100%;
@@ -4992,7 +4970,7 @@ button.swiper-pagination-bullet {
   .l-form__dd select {
     width: 16.8rem;
   }
-  .l-form__dd.-radio-sec .wpcf7-form-control-wrap .wpcf7-form-control {
+  .l-form__dd.-radio-sec {
     margin-top: 1.1rem;
   }
   .l-form__dd input[type=radio] {
@@ -5634,10 +5612,9 @@ button.swiper-pagination-bullet {
   }
   .p-home-blog .l-inner {
     padding: 8.8rem 3.4rem;
-    padding: 8.8rem 3.4rem 0 rem 34;
   }
   .p-home-recruit .l-inner {
-    padding: 8.8rem 0 13.8rem 0;
+    padding: 0 0 13.8rem 0;
   }
   .l-menu {
     padding: 0;
