@@ -854,7 +854,7 @@ body.subpage .l-hamburger__text {
   display: block;
   z-index: 101;
   position: absolute;
-  top: 1.8rem;
+  top: 0.4rem;
   right: 0.4rem;
   width: 4.6rem;
   height: 3.9rem;
@@ -983,7 +983,7 @@ body.is-active {
 }
 
 .l-header__logo {
-  z-index: 3;
+  z-index: 101;
   position: relative;
   width: 15.1rem;
   max-width: 251px;
@@ -1027,6 +1027,14 @@ body.is-active {
   background: #988c2c;
 }
 
+.is-active--none {
+  display: none;
+}
+
+.is-active--visible {
+  display: block !important;
+}
+
 /* l-inner
 ----------------------------------------- */
 .l-inner {
@@ -1038,11 +1046,10 @@ body.is-active {
 
 .p-home-staff .l-inner {
   padding-top: 9rem;
-  padding-bottom: 9rem;
 }
 
 .p-home-benefit .l-inner {
-  padding-top: 0.5rem;
+  padding-top: 9rem;
   padding-bottom: 19rem;
 }
 
@@ -1081,6 +1088,7 @@ body.is-active {
   opacity: 1;
 }
 .l-menu__logo {
+  display: none;
   z-index: 102;
   position: absolute;
   top: 0.8rem;
@@ -1799,6 +1807,9 @@ Splide
 
 /* home-benefits
 ----------------------------------------- */
+.p-home-benefit {
+  overflow: hidden;
+}
 .p-home-benefit__container {
   margin-top: 5.4rem;
 }
@@ -5646,6 +5657,7 @@ button.swiper-pagination-bullet {
     padding: 0;
   }
   .l-menu__logo {
+    display: block;
     position: initial;
   }
   .l-menu__wrapper {
