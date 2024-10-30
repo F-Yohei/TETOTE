@@ -205,18 +205,28 @@
 /* c-arrow
 ----------------------------------------- */
 .c-circle {
+  -webkit-transition: 0.5s;
   display: block;
   width: 4.3rem;
   height: 4.3rem;
   border: 1px solid #222222;
   border-radius: 50%;
   background: #222222;
+  transition: 0.5s;
 }
 .c-circle.-blog {
   width: 5.9rem;
   height: 5.9rem;
   border: 1px solid #fff;
   background: #fff;
+}
+.c-circle.-blog:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+.c-circle.-benefits:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .c-arrow {
@@ -849,6 +859,9 @@ body.subpage .l-hamburger__text {
   color: #222222;
 }
 
+/*==============================================================
+トグルボタンの共通カスタマイズ
+==============================================================*/
 .l-hamburger__toggle {
   -webkit-transition: all 0.5s ease;
   display: block;
@@ -926,6 +939,36 @@ body.subpage .l-hamburger__text {
   transition: all 0.5s ease;
 }
 
+/*==============================================================
+追従ヘッダーのとグルボタンのカスタマイズ
+==============================================================*/
+.l-hamburger__toggle.-sub {
+  top: 0.4rem;
+}
+.l-hamburger__toggle.-sub .l-hamburger__toggleWrap span {
+  background: #222222;
+}
+.l-hamburger__toggle.-sub .l-hamburger__text {
+  color: #222222;
+}
+.l-hamburger__toggle.is-active .l-hamburger__toggleWrap span {
+  background: #222222;
+}
+.l-hamburger__toggle.is-active .l-hamburger__toggleWrap span:nth-of-type(1) {
+  -webkit-transform: translateY(0.9rem) rotate(-45deg);
+          transform: translateY(0.9rem) rotate(-45deg);
+}
+.l-hamburger__toggle.is-active .l-hamburger__toggleWrap span:nth-of-type(2) {
+  opacity: 0;
+}
+.l-hamburger__toggle.is-active .l-hamburger__toggleWrap span:nth-of-type(3) {
+  -webkit-transform: translateY(-0.8rem) rotate(45deg);
+          transform: translateY(-0.8rem) rotate(45deg);
+}
+.l-hamburger__toggle.is-active .l-hamburger__text {
+  opacity: 0;
+}
+
 /* header
 ----------------------------------------- */
 body.subpage .l-header {
@@ -949,6 +992,9 @@ body.is-active {
   overflow: hidden;
 }
 
+/*==============================================================
+ヘッダー共通のCSS
+==============================================================*/
 .l-header {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -957,7 +1003,7 @@ body.is-active {
   display: -webkit-box;
   display: flex;
   z-index: 7;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
           flex-direction: row;
@@ -967,6 +1013,12 @@ body.is-active {
   height: 60px;
   padding: 1rem;
   opacity: 1;
+}
+.l-header.js-view {
+  opacity: 1;
+}
+.l-header.js-hide {
+  opacity: 0;
 }
 
 .l-header__inner {
@@ -1035,6 +1087,42 @@ body.is-active {
   display: block !important;
 }
 
+/*==============================================================
+追従ヘッダーのカスタマイズ
+==============================================================*/
+.l-header.-sub {
+  z-index: 1000;
+  background: #fff;
+  opacity: 1;
+}
+.l-header.-sub .l-header__logoLink {
+  display: none;
+}
+.l-header.-sub .l-header__logoLink--subpage {
+  display: block;
+}
+.l-header.-sub .l-header__logoLink--subpage figure picture img {
+  width: 100%;
+}
+
+.fixed-header {
+  -webkit-transition: all 0.3s ease-in-out;
+  visibility: hidden;
+  z-index: 1;
+  position: fixed;
+  top: -80px;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+/*==============================================================
+スクロール時に追従ヘッダーにつけ外しするCSS
+==============================================================*/
+.fixed-header.is-show {
+  visibility: visible;
+  top: 0;
+}
+
 /* l-inner
 ----------------------------------------- */
 .l-inner {
@@ -1042,6 +1130,10 @@ body.is-active {
   max-width: 1024px;
   margin: 0 auto;
   padding: 0 1.7rem;
+}
+
+.p-home-subCatch .l-inner {
+  padding: 0;
 }
 
 .p-home-staff .l-inner {
@@ -1309,7 +1401,10 @@ body.subpage .l-main .l-intro {
   content: "RECRUITMENT";
 }
 .l-section__title span {
-  border-bottom: 1px solid #222222;
+  text-decoration-line: underline;
+  text-decoration-color: #222222;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
 }
 .l-section__description {
   margin-top: 4rem;
@@ -1800,11 +1895,83 @@ Splide
 .p-home-staff .splide {
   visibility: visible;
 }
-
-.splide__track {
+.p-home-staff .splide__track {
   overflow: visible !important;
 }
 
+/*==============================================================
+Splide　arrowのカスタマイズ
+==============================================================*/
+.button {
+  -webkit-transition: 0.2s !important;
+  width: 5.9rem !important;
+  height: 5.9rem !important;
+  transition: 0.2s !important;
+}
+
+.splide__arrows {
+  position: absolute;
+  top: 62.6rem;
+  right: 0;
+}
+
+.splide__arrow {
+  border: 1px solid #222222 !important;
+  background: #fff !important;
+  opacity: 1 !important;
+}
+
+.splide__arrow--next {
+  position: absolute;
+  right: -7.4rem !important;
+}
+
+.splide__arrow--prev {
+  position: absolute;
+  left: -6.3rem !important;
+}
+
+.arrow {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.arrow::before {
+  -webkit-transform: translate(-50%, -48%);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  left: 48%;
+  width: 16px;
+  height: 2px;
+          transform: translate(-50%, -48%);
+  background: #222222;
+  content: "";
+}
+.arrow::after {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-top: 2px solid #222222;
+  border-right: 2px solid #222222;
+  border-radius: 2px;
+  content: "";
+}
+.arrow.-prev::after {
+  -webkit-transform: translate(-50%, -50%) rotate(225deg);
+  left: 45%;
+  transform: translate(-50%, -50%) rotate(225deg);
+}
+
+/* 次のスライドが無い場合の矢印 */
 /* home-benefits
 ----------------------------------------- */
 .p-home-benefit {
@@ -1814,11 +1981,9 @@ Splide
   margin-top: 5.4rem;
 }
 .p-home-benefit__circle {
-  -webkit-transform: translateY(-50%);
   position: absolute;
   top: 74%;
   right: 1.2rem;
-          transform: translateY(-50%);
 }
 
 .p-card {
@@ -1905,6 +2070,7 @@ Splide
           transform: translateX(-50%);
   text-align: center;
 }
+
 .p-card__title {
   display: inline-block;
   padding: 0.5rem;
@@ -1924,12 +2090,6 @@ Splide
   font-family: "Noto Sans JP";
   letter-spacing: 0em;
   text-align: left;
-}
-
-.c-link__wrap.-benefits {
-  position: absolute;
-  top: 74%;
-  right: 8%;
 }
 
 /* home-introduction
@@ -1978,6 +2138,7 @@ Splide
 
 .p-home-introduction .splide__track {
   padding-left: 14% !important;
+  overflow: visible !important;
 }
 
 .p-home-introduction__inner .splide {
@@ -1986,10 +2147,12 @@ Splide
   overflow: hidden;
 }
 .p-home-introduction__inner .splide .splide__track .splide__list .splide__slide {
+  -webkit-transition: 0.3s;
   width: 27.1rem !important;
   height: 21rem !important;
   overflow: hidden;
   border-radius: 6rem;
+  transition: 0.3s;
 }
 .p-home-introduction__inner .splide .splide__track .splide__list .splide__slide figure {
   position: relative;
@@ -2013,13 +2176,9 @@ Splide
      object-fit: cover;
   font-family: "object-fit: cover;";
 }
-
-.splide__arrow {
-  display: none !important;
-}
-
-.splide__pagination__page {
-  display: none !important;
+.p-home-introduction__inner .splide .splide__track .splide__list .splide__slide.is-active {
+  -webkit-transform: translateY(2.7rem);
+          transform: translateY(2.7rem);
 }
 
 /* home-blog
@@ -2102,7 +2261,7 @@ Splide
 .p-home-blog__img img {
   -o-object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 100%;
   max-height: 180px;
      object-fit: cover;
 }
@@ -2112,10 +2271,12 @@ Splide
 }
 
 .p-home-blog__more {
+  -webkit-box-pack: end;
   -webkit-box-align: center;
   display: -webkit-box;
   display: flex;
           align-items: center;
+          justify-content: end;
   margin-top: 2rem;
   font-weight: 400;
   font-size: 1.6rem;
@@ -5020,6 +5181,9 @@ button.swiper-pagination-bullet {
     display: flex;
             justify-content: space-between;
   }
+  .p-home-staff .splide__track {
+    padding-left: 5.8% !important;
+  }
   .p-home-benefit__container {
     -webkit-box-pack: center;
     display: -webkit-box;
@@ -5049,22 +5213,19 @@ button.swiper-pagination-bullet {
   .p-card__body {
     top: 93%;
   }
-  .p-card:hover > a > figure > img {
-    -webkit-transform: scale(1.2);
-    -webkit-transition: -webkit-transform 0.8s;
-            transform: scale(1.2);
-    transition: -webkit-transform 0.8s;
-    transition: transform 0.8s;
-    transition: transform 0.8s, -webkit-transform 0.8s;
-  }
   .p-home-introduction .splide__track {
     padding-left: 37% !important;
   }
+  .p-home-introduction__inner .splide .splide__track .splide__list .splide__slide.is-active {
+    -webkit-transform: translateY(3.6rem);
+            transform: translateY(3.6rem);
+  }
   .p-home-blog__list {
+    -webkit-box-pack: justify;
     display: -webkit-box;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+            justify-content: space-between;
   }
   .p-home-blog__media {
     width: 45.2rem;
@@ -5573,8 +5734,12 @@ button.swiper-pagination-bullet {
     right: 4.5rem;
   }
   .l-hamburger__toggle.is-active .l-hamburger__toggleWrap span:nth-of-type(1) {
-    -webkit-transform: translateY(2rem) rotate(-45deg);
-            transform: translateY(2rem) rotate(-45deg);
+    -webkit-transform: translate(0.7rem, 2rem) rotate(-45deg);
+            transform: translate(0.7rem, 2rem) rotate(-45deg);
+  }
+  .l-hamburger__toggle.is-active .l-hamburger__toggleWrap span:nth-of-type(3) {
+    -webkit-transform: translate(0.8rem, -1rem) rotate(45deg);
+            transform: translate(0.8rem, -1rem) rotate(45deg);
   }
   .l-hamburger__toggleWrap span {
     width: 5.1rem;
@@ -5593,6 +5758,14 @@ button.swiper-pagination-bullet {
     line-height: 0.8333333333;
     letter-spacing: 0.1em;
     letter-spacing: 0em;
+  }
+  .l-hamburger__toggle.is-active .l-hamburger__toggleWrap span:nth-of-type(1) {
+    -webkit-transform: translate(0.7rem, 2rem) rotate(-45deg);
+            transform: translate(0.7rem, 2rem) rotate(-45deg);
+  }
+  .l-hamburger__toggle.is-active .l-hamburger__toggleWrap span:nth-of-type(3) {
+    -webkit-transform: translate(0.8rem, -1rem) rotate(45deg);
+            transform: translate(0.8rem, -1rem) rotate(45deg);
   }
   body.subpage .l-header__button {
     top: 3.8rem;
@@ -5629,21 +5802,25 @@ button.swiper-pagination-bullet {
     padding: 1.4rem 0;
     color: #fff;
   }
+  .l-header.-sub .l-header__button {
+    top: 3.8rem;
+    right: 12.2rem;
+  }
   .l-inner {
     padding: 0 1.7rem;
   }
   .p-home-staff .l-inner {
-    padding: 15.6rem 4rem 0 4rem;
+    padding: 15.6rem 3.3rem 0 3.3rem;
   }
   .p-home-benefit .l-inner {
-    padding-top: 13.7rem;
+    padding-top: 15rem;
   }
   .p-home-blog .l-inner {
     padding: 8.8rem 3.4rem;
-    padding: 8.8rem 3.4rem 0 rem 34;
+    padding: 7.5rem 3.4rem 0 rem 34;
   }
   .p-home-recruit .l-inner {
-    padding: 8.8rem 0 13.8rem 0;
+    padding: 9.1rem 0 13.8rem 0;
   }
   .l-menu {
     padding: 0;
@@ -5655,8 +5832,8 @@ button.swiper-pagination-bullet {
   .l-menu__wrapper {
     -webkit-box-pack: right;
     position: absolute;
-    top: 28.8%;
-    right: 3.4%;
+    top: 23.1%;
+    right: 4.6%;
             justify-content: right;
     width: 100%;
   }
@@ -5670,7 +5847,8 @@ button.swiper-pagination-bullet {
     display: -webkit-box !important;
     display: flex !important;
             align-items: center;
-    width: 17.9%;
+    width: 25.1rem;
+    max-width: 251px;
     margin-right: 6.3rem;
   }
   .l-menu__list {
@@ -5687,14 +5865,20 @@ button.swiper-pagination-bullet {
     margin-right: 5rem;
   }
   .l-menu__subList--left {
-    width: 47.2%;
+    width: 45.8%;
     margin-right: 3rem;
   }
   .l-menu__subList--right {
-    width: 47.2%;
+    width: 45.8%;
   }
   .l-menu__item {
-    padding: 2.3rem 0;
+    padding: 2.2rem 0;
+  }
+  .l-menu__item.-border-bottom {
+    border-bottom: none;
+  }
+  .l-menu__item.-button {
+    padding: 5.1rem 0 0 0;
   }
   .l-menu__link {
     -webkit-transition: opacity 0.5s ease;
@@ -5783,7 +5967,7 @@ button.swiper-pagination-bullet {
   }
   .p-home-mv__blog {
     top: 87.8%;
-    width: 98.6%;
+    width: 97.6%;
   }
   .p-home-mv__blogText {
     -webkit-box-pack: justify;
@@ -5843,6 +6027,7 @@ button.swiper-pagination-bullet {
     margin-top: 1rem;
   }
   .p-home-staff__title {
+    margin-top: 0.5rem;
     font-size: 1.6rem;
   }
   .p-home-staff__name {
@@ -5853,7 +6038,7 @@ button.swiper-pagination-bullet {
     margin-top: 11.4rem;
   }
   .p-home-benefit__circle {
-    top: 79.6%;
+    top: 72.6%;
     right: 2rem;
   }
   .p-card.-traning {
@@ -5896,9 +6081,6 @@ button.swiper-pagination-bullet {
   }
   .splide-slider.l-section {
     padding: 10.1rem 0 0 0;
-  }
-  .p-home-introduction .splide__track {
-    padding-left: 31% !important;
   }
   .p-home-introduction__inner .splide {
     padding-bottom: 13.8rem;
@@ -5948,7 +6130,7 @@ button.swiper-pagination-bullet {
   }
   .p-home-blog__more {
     position: absolute;
-    top: 10.5rem;
+    top: 6.3rem;
     right: 26rem;
   }
   .p-home-recruit__wrapper {
@@ -6198,14 +6380,10 @@ button.swiper-pagination-bullet {
     text-align: center;
   }
   .p-home-introduction .splide__track {
-    padding-left: 33% !important;
+    padding-left: 32.4% !important;
   }
   .p-home-blog__media {
     margin-top: 1.8rem;
-  }
-  .p-home-blog__more {
-    -webkit-box-pack: end;
-            justify-content: end;
   }
   .p-staff__list {
     -webkit-box-orient: horizontal;
@@ -6245,7 +6423,14 @@ button.swiper-pagination-bullet {
     top: 3.4rem;
     right: 4.5rem;
   }
+  .l-hamburger__toggle.-sub {
+    top: 3.4rem;
+    right: 4.5rem;
+  }
   body.subpage .l-header {
+    height: 11.8rem;
+  }
+  .l-header.-sub {
     height: 11.8rem;
   }
   .p-hero {
